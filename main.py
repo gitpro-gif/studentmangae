@@ -23,4 +23,9 @@ def AddStudent(id: int, name: str, rollno: int):
         "message" : "Student added",
         "data": student
     }
-    
+
+@app.get("/getall")
+def getAllStudent():
+    return {
+        "data": students
+    }
