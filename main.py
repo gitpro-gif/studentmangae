@@ -30,4 +30,15 @@ def getAllStudents():
     return {
         "data": students
     }
-    
+
+@app.get("/student/{id}")
+def getstudent(id:int):
+    for student in students:
+
+        if student["id"]==id:
+          return{
+            "data": students
+          }
+    return {
+        "message":"data not found"
+    }
