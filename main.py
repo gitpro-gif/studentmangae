@@ -42,3 +42,15 @@ def getstudent(id:int):
     return {
         "message":"data not found"
     }
+
+@app.put("/update/{id}")
+def updateStudent(id: int, name: str):
+    for student in students:
+        if student["id"] == id:
+            student["name"] = name
+            return{
+                "data":students
+            }
+    return{
+        "message":"id not foound"
+    }
